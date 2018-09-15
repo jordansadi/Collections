@@ -2,6 +2,15 @@ package us.mattgreen;
 
 import java.util.*;
 
+/**
+ * This class is the driver for the Collections package.
+ * It creates a HashMap from a csv file, converts it to a LinkedList, then sorts the list by value (descending).
+ * It then creates a LinkedHashMap from the LinkedList, then creates a Set and an Iterator.
+ * Finally, it prints the top 100 most-used words, and the number of words used exactly once.
+ * Created by jsadi on 9/15/2018.
+ * @author Jordan Sadi
+ * @version 2018 0915 .3
+ */
 public class Main {
 
     private final static FileInput indata = new FileInput("the_book.csv");
@@ -11,7 +20,6 @@ public class Main {
         String line;
         String[] words;
         Object wordFound;
-     //   String[] fields;
 
         while ((line = indata.fileReadLine()) != null) {
             line=line.replace(",","").replace(".","")
