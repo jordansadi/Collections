@@ -31,15 +31,16 @@ public class Main {
                     .replace("_"," ").replace("?","")
                     .toLowerCase().trim();
             words = line.split(" ");
-            for (String s:words) {
-                wordFound = map.get(s);
-                if (wordFound == null) {
-                    map.put(s, new Integer(1));
+            for (String s : words) {
+                if (s.length() > 0) {
+                    wordFound = map.get(s);
+                    if (wordFound == null) {
+                        map.put(s, new Integer(1));
+                    }
+                    else {
+                        map.put(s, map.get(s) + 1);
+                    }
                 }
-                else {
-                    map.put(s, map.get(s) + 1);
-                }
-
             }
         }
 
